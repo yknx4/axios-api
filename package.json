@@ -2,7 +2,16 @@
   "name": "axios-api",
   "version": "0.0.1",
   "description": "API wrapper on Axios",
+  "homepage": "https://github.com/yknx4/axios-api",
+  "bugs": {
+    "url": "https://github.com/yknx4/axios-api/issues",
+    "email": "me+axiosapi@ale.workd"
+  },
+  "repository": "yknx4/axios-api",
   "main": "index.js",
+  "engines": {
+    "node": ">=6.11 < 9.0"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "standard src/",
@@ -14,7 +23,8 @@
   },
   "author": {
     "name": "Ale Figueroa",
-    "email": "me@ale.world"
+    "email": "me@ale.world",
+    "url": "www.ale.world"
   },
   "licenses": [
     {
@@ -24,7 +34,6 @@
   ],
   "dependencies": {
     "bunyan": "^1.8.12",
-    "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "invariant": "^2.2.2",
     "lodash": "^4.17.4",
@@ -41,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "cors": "^2.8.4",
     "axios": "^0.17.0",
     "axios-debug": "^0.0.4",
     "axios-debug-log": "^0.3.0",

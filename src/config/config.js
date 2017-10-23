@@ -4,7 +4,8 @@ import bunyanDebugStream from 'bunyan-debug-stream'
 
 dotenv.config()
 
-export const { ENVIRONMENT, APP_NAME } = process.env
+export const APP_NAME = 'Axios API'
+export const ENVIRONMENT = process.env.NODE_ENV
 
 invariant(ENVIRONMENT, 'Did you set your ENVIRONMENT in your .env file?')
 invariant(APP_NAME, 'Did you set your APP_NAME in your .env file?')
