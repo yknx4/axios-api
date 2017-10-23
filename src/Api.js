@@ -4,12 +4,12 @@ import axios from 'axios'
 import axiosWrapper from './axiosWrapper'
 
 export default class Api {
-  constructor (prefix, models = []) {
+  constructor (prefix, models = [], axiosOpts = {}) {
     const URL_REGEX = /(https?):\/\/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[\w-_.?]+)(?::(\d{2,5}))?\/?.*/gi
     logger.info(`Initializing Axios Api for ${prefix}`)
     invariant(URL_REGEX.test(prefix), `${prefix} should be a valid url`)
     this.$prefix = prefix
-    this.$axios = axios.create()
+    this.$axios = axios.create(axiosOpts)
     this.setModels(models)
   }
 

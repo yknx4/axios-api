@@ -34,11 +34,21 @@ describe('requests', () => {
   let api
   beforeAll(async () => {
     serverPort = await testServer()
-    api = new Api(`http://127.0.0.1:${serverPort}`, ['users', 'posts', 'tags'])
+    api = new Api(
+      `http://127.0.0.1:${serverPort}`,
+      ['users', 'posts', 'tags'],
+      { crossdomain: true }
+    )
   })
   describe('get', () => {
     it('should perform get request with headers', async () => {
-      const { status, data } = await api.posts.get()
+      const { status, data } = await api.posts
+        .get({
+          headers: {
+            'X-Custom-Header': 'custom value'
+          }
+        })
+        .catch(e => console.log({ r: e.config }))
       expect(status).toEqual(200)
       const { url, method, headers, path } = data
       expect(method).toEqual('GET')

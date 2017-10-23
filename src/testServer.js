@@ -1,7 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import getPort from 'get-port'
-import cors from 'cors'
 import bunyanRequest from 'express-bunyan-logger'
 
 export default async function testServer () {
@@ -9,7 +8,14 @@ export default async function testServer () {
   const port = await getPort()
 
   app.use(bunyanRequest({ logger: config.logger }))
-  app.use(cors())
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, X-Custom-Header'
+    )
+    next()
+  })
   app.use(bodyParser.json())
   app.use((req, res) => {
     res.status(200).json({
