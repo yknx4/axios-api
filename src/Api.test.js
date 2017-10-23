@@ -42,13 +42,12 @@ describe('requests', () => {
   })
   describe('get', () => {
     it('should perform get request with headers', async () => {
-      const { status, data } = await api.posts
-        .get({
-          headers: {
-            'X-Custom-Header': 'custom value'
-          }
-        })
-        .catch(e => console.log({ r: e.config }))
+      const { status, data } = await api.posts.get({
+        headers: {
+          'X-Custom-Header': 'custom value'
+        }
+      })
+
       expect(status).toEqual(200)
       const { url, method, headers, path } = data
       expect(method).toEqual('GET')
