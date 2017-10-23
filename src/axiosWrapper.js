@@ -1,3 +1,5 @@
+import { URL } from 'whatwg-url'
+
 function wrap (axios, name, url) {
   return axios[name].bind(axios, url.toString())
 }
