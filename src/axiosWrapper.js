@@ -1,4 +1,7 @@
-import { URL } from 'url'
+let { URL } = global
+if (URL == null) {
+  URL = require('url').URL
+}
 
 function wrap (axios, name, url) {
   return axios[name].bind(axios, url.toString())
