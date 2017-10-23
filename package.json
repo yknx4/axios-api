@@ -71,6 +71,9 @@
     "prettier": "^1.7.3",
     "standard": "^10.0.3"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "standard": {
     "globals": [
       "config",
