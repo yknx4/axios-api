@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/yknx4/axios-api.svg?branch=master)](https://travis-ci.org/yknx4/axios-api)
 # Axios API 
 
 API wrapper for Axios
