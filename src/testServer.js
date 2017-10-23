@@ -1,13 +1,25 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import getPort from 'get-port'
-import bunyanRequest from 'express-bunyan-logger'
+import debug from 'debug'
 
 export default async function testServer () {
+  const logger = debug('test-server')
   const app = express()
   const port = await getPort()
 
-  app.use(bunyanRequest({ logger: config.logger }))
+  app.use((req, res, next) => {
+    logger(`${req.method} ${req.url}`)
+    const originalEnd = res.end
+    res.end = function end (...args) {
+      originalEnd.bind(res)(...args)
+      logger(
+        `${this.statusCode} ${this.statusMessage} (${this.req.method} ${this.req
+          .url})`
+      )
+    }
+    next()
+  })
   app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
     res.header(

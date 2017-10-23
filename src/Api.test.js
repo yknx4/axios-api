@@ -16,15 +16,8 @@ describe('Api Model', () => {
     expect(invalid).toThrowAnyError()
   })
 
-  it('should get by default', async () => {
-    const github = new Api('https://www.github.com', ['orgs', 'repos'])
-    const lodashRepos = github.orgs('lodash').repos.get()
-    await expect(lodashRepos).resolves
-  })
-
   it('should have axios defaults', () => {
-    const github = new Api('https://www.github.com', ['orgs', 'repos'])
-
+    const github = new Api('https://api.github.com', ['orgs', 'repos'])
     expect(github.defaults).toBe(github.$axios.defaults)
   })
 })
@@ -34,11 +27,7 @@ describe('requests', () => {
   let api
   beforeAll(async () => {
     serverPort = await testServer()
-    api = new Api(
-      `http://127.0.0.1:${serverPort}`,
-      ['users', 'posts', 'tags'],
-      { crossdomain: true }
-    )
+    api = new Api(`http://127.0.0.1:${serverPort}`, ['users', 'posts', 'tags'])
   })
   describe('get', () => {
     it('should perform get request with headers', async () => {
@@ -47,7 +36,6 @@ describe('requests', () => {
           'X-Custom-Header': 'custom value'
         }
       })
-
       expect(status).toEqual(200)
       const { url, method, headers, path } = data
       expect(method).toEqual('GET')
