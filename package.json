@@ -1,0 +1,74 @@
+{
+  "name": "axios-api",
+  "version": "0.0.1",
+  "description": "API wrapper on Axios",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "standard src/",
+    "test": "ENVIRONMENT=test ./node_modules/.bin/jest --runInBand --forceExit ",
+    "predev": "yarn install",
+    "dev": "nodemon dev.js | ./node_modules/.bin/bunyan -l debug -L",
+    "start": "node dist/",
+    "build": "standard src/ && babel src/ -d dist"
+  },
+  "author": {
+    "name": "Ale Figueroa",
+    "email": "me@ale.world"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "invariant": "^2.2.2",
+    "lodash": "^4.17.4"
+  },
+  "peerDependencies": {
+    "axios": ">= 0.4.0 < 1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json}": [
+      "prettier --single-quote --write",
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "axios": "^0.17.0",
+    "axios-debug": "^0.0.4",
+    "axios-debug-log": "^0.3.0",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "bunyan-debug-stream": "^1.0.8",
+    "express": "^4.16.2",
+    "express-bunyan-logger": "^1.3.2",
+    "get-port": "^3.2.0",
+    "husky": "^0.14.3",
+    "jasmine-expect": "^3.7.1",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.2.3",
+    "nodemon": "^1.12.1",
+    "prettier": "^1.7.3",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": [
+      "config",
+      "logger",
+      "any",
+      "describe",
+      "beforeAll",
+      "it",
+      "expect"
+    ]
+  }
+}
