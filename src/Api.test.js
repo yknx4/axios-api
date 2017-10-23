@@ -18,7 +18,7 @@ describe('Api Model', () => {
 
   it('should get by default', async () => {
     const github = new Api('https://www.github.com', ['orgs', 'repos'])
-    const lodashRepos = github.orgs('lodash').lodashRepos
+    const lodashRepos = github.orgs('lodash').repos.get()
     await expect(lodashRepos).resolves
   })
 
