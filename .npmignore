@@ -21,4 +21,5 @@ coverage
 .editorconfig
 
 **/*.test.js
-jest*
+jest.config.js
+jest-setup.js

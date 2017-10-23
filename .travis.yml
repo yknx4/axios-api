@@ -8,11 +8,13 @@ cache:
   directories:
   - node_modules
 install:
+- npm install -g npm
 - yarn install --frozen-lockfile
 script:
 - yarn run lint
 - yarn run test
 - yarn run build
+before_deploy: "yarn run build"
 deploy:
   provider: npm
   skip_cleanup: true
