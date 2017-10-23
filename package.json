@@ -1,6 +1,6 @@
 {
   "name": "axios-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "API wrapper on Axios",
   "homepage": "https://github.com/yknx4/axios-api",
   "bugs": {
@@ -13,6 +13,8 @@
     "node": ">=6.11 < 9.0"
   },
   "scripts": {
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build",
     "precommit": "lint-staged",
     "lint": "standard src/",
     "test": "ENVIRONMENT=test ./node_modules/.bin/jest --runInBand --forceExit ",
