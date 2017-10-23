@@ -1,6 +1,6 @@
 {
   "name": "axios-api",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "API wrapper on Axios",
   "homepage": "https://github.com/yknx4/axios-api",
   "bugs": {
@@ -10,7 +10,7 @@
   "repository": "yknx4/axios-api",
   "main": "index.js",
   "engines": {
-    "node": ">=6.11 < 9.0"
+    "node": ">=7 < 9.0"
   },
   "scripts": {
     "prepack": "npm run build",
