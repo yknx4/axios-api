@@ -13,10 +13,9 @@ script:
 - yarn run lint
 - yarn run test
 - yarn run build
-before_deploy: 
-- yarn run build
 deploy:
   provider: npm
+  skip_cleanup: true
   email: yknx.4.b@gmail.com
   api_key:
     secure: hJcBf+0fA8n98dVFyAoKjdHyp3HOMIXCe+rKzE5Y1KwKtyam4/0Dy7TfweNGxZzAY2XZMpgT0A7tikeFauAhOIxUeiTPoPBZH74l9yRkzz59hy19xPu4cEvdJqkI+Glz1fEMK8CXYCQ8u8VeXz21aN5IcCA5fEZJeNapbdn7lnF7Jj3C9jJ8GonMOnGGPudz4xpHP2uExT+BcL8LSUEAMTccKyDEwPNdD3fQgFQUh/je2fDMSgJM/yYXqqdyPCAJYD1uil/zXW1eBdK2QSMyrbNws5Nu3/xrPfn+Jh/VvXivGybIGwQBsQxQhjUrgDBMKgwCchHEvCZz7w80O+HXrL5FZu0mxG0WRAKggefz+QfiAz2D/TilmACQVjKPh1u36Kcp+RaWAcqPsCBf5PJjLcYv07SefVo9GRqKtZXJcwP9zir5WpzihVzaP0hrTwAi1s3L8j/8N9VNXTodBcEGBlgOF8OQTcwx09tKhMJ5qKB9O1DOlQG/xA5N9pmGyaULT+BGdfdvDtqQGkNUEbnYV8oQIy8z77utBe7dyYSYgiuOoljg7wfSQIk3I6mL9Fa7nkExg6mnANXeDFIoYsTa95crZwBP+qG0j/ecUlzgB8Vc/us3UlZsxDPmPnl6IsGPnSrAH0WbRaKj1hXh8znWrVpb9JVrxlQJbO1bLUkyh7U=

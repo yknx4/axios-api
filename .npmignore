@@ -20,3 +20,5 @@ coverage
 .vscode
 .editorconfig
 
+**/*.test.js
+jest*
