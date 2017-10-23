@@ -1,6 +1,6 @@
-import { URL as baseUrl, Url } from 'url'
+import { URL as baseUrl } from 'url'
 
-const URL = baseUrl || Url
+const URL = baseUrl || global.URL
 
 function wrap (axios, name, url) {
   return axios[name].bind(axios, url.toString())

@@ -27,7 +27,8 @@
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "invariant": "^2.2.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "url-polyfill": "^1.0.8"
   },
   "peerDependencies": {
     "axios": ">= 0.4.0 < 1"
