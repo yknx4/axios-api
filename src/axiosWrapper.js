@@ -1,14 +1,4 @@
-let baseUrl = null
-
-try {
-  require.resolve('url')
-  baseUrl = require('url').URL
-  logger.trace('Loaded URL from url')
-} catch (e) {
-  logger.trace('url is not available')
-}
-
-const URL = baseUrl || global.URL
+import { URL } from 'url'
 
 function wrap (axios, name, url) {
   return axios[name].bind(axios, url.toString())

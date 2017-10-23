@@ -1,4 +1,4 @@
-import 'url-polyfill'
+import 'babel-polyfill'
 import './config'
 import './config/logger'
 import Api from './Api'

@@ -1,6 +1,6 @@
 {
   "name": "axios-api",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "API wrapper on Axios",
   "homepage": "https://github.com/yknx4/axios-api",
   "bugs": {
@@ -36,10 +36,8 @@
   ],
   "dependencies": {
     "debug": "^3.1.0",
-    "dotenv": "^4.0.0",
     "invariant": "^2.2.2",
-    "lodash": "^4.17.4",
-    "url-polyfill": "^1.0.8"
+    "lodash": "^4.17.4"
   },
   "peerDependencies": {
     "axios": ">= 0.4.0 < 1"
@@ -57,9 +55,11 @@
     "axios-debug-log": "^0.3.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.2.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "body-parser": "^1.18.2",
+    "core-js": "^2.5.1",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "get-port": "^3.2.0",
