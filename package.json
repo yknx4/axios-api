@@ -1,6 +1,6 @@
 {
   "name": "axios-api",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "API wrapper on Axios",
   "homepage": "https://github.com/yknx4/axios-api",
   "bugs": {
