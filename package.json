@@ -1,6 +1,6 @@
 {
   "name": "axios-api",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "API wrapper on Axios",
   "homepage": "https://github.com/yknx4/axios-api",
   "bugs": {
@@ -83,7 +83,8 @@
       "describe",
       "beforeAll",
       "it",
-      "expect"
+      "expect",
+      "URL"
     ]
   }
 }
