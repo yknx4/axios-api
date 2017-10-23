@@ -1,4 +1,12 @@
-import { URL as baseUrl } from 'url'
+let baseUrl = null
+
+try {
+  require.resolve('url')
+  baseUrl = require('url').URL
+  logger.trace('Loaded URL from url')
+} catch (e) {
+  logger.trace('url is not available')
+}
 
 const URL = baseUrl || global.URL
 
