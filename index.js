@@ -1,4 +1,4 @@
 module.exports = {
-  default: require('./dist'),
+  default: require('./dist').default,
   dev: function () { return require('./src') }
 }
