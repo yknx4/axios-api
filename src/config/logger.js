@@ -1,11 +1,12 @@
-import bunyan from 'bunyan'
+import debug from 'debug'
 
 function setupLogger () {
-  global.logger = bunyan.createLogger({
-    name: config.APP_NAME,
-    src: config.ENVIRONMENT !== 'production',
-    streams: [config.bunyanStream]
-  })
+  global.logger = {}
+  global.logger.trace = debug('axios-api:trace')
+  global.logger.debug = debug('axios-api:debug')
+  global.logger.info = debug('axios-api:info')
+  global.logger.warn = debug('axios-api:warn')
+  global.logger.error = debug('axios-api:error')
 }
 if (global.logger == null) {
   console.log('Initializing Logger')
